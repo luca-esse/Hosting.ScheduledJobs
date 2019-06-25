@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hosting.ScheduledJobs</name>
+    </assembly>
+    <members>
+        <member name="T:Hosting.ScheduledJobs.ExecutionScheduleIsNullException">
+            <summary>
+                An exception throw when <see cref="P:Hosting.ScheduledJobs.ScheduledJobOptions`1.CrontabExecutionSchedule"/> is null. 
+            </summary>
+        </member>
+        <member name="T:Hosting.ScheduledJobs.IScheduledJob">
+            <summary>
+                Represents a scheduled job. 
+            </summary>
+        </member>
+        <member name="M:Hosting.ScheduledJobs.IScheduledJob.ExecuteAsync">
+            <summary>
+                Triggered when the configured execution interval is elapsed.
+            </summary>
+            <remarks>
+                Job executions are not concurrent.
+                The next execution is queued and it won't start until the current execution is completed. 
+            </remarks>
+        </member>
+        <member name="T:Hosting.ScheduledJobs.ScheduledJobOptions`1">
+            <summary>
+                Options for a scheduled job.
+            </summary>
+            <typeparam name="TScheduledJob">
+                The type of scheduled job that owns the options.
+            </typeparam>
+        </member>
+        <member name="P:Hosting.ScheduledJobs.ScheduledJobOptions`1.ExecutionSchedule">
+            <summary>
+                Defines the job schedule with a crontab expression. 
+            </summary>
+            <exception cref="T:System.ArgumentNullException">The crontab expression is null.</exception>
+            <exception cref="T:System.ArgumentException">The crontab expression is not valid.</exception>
+        </member>
+        <member name="P:Hosting.ScheduledJobs.ScheduledJobOptions`1.SlowWarningThreshold">
+            <summary>
+                Defines a threshold for logging a warning when the job takes too long
+                to complete the execution.
+            </summary>
+            <remarks>
+                When null the warning is disabled.
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">The warning threshold is less or equal to 0.</exception>
+        </member>
+        <member name="T:Hosting.ScheduledJobs.ScheduledJobsException">
+            <summary>
+                An exception inherited by Hosting.ScheduledJobs exceptions.
+            </summary>
+        </member>
+        <member name="T:Hosting.ScheduledJobs.ServiceCollectionExtensions">
+            <summary>
+                Extension methods for adding scheduled jobs to the DI container.
+            </summary>
+        </member>
+        <member name="M:Hosting.ScheduledJobs.ServiceCollectionExtensions.AddScheduledJob``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Adds a scheduled job to the DI container with the provided configuration.
+            </summary>
+            <param name="serviceCollection">
+                The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add the services to.
+            </param>
+            <param name="configuration">
+                The configuration of the job scheduling.
+            </param>
+            <typeparam name="TScheduledJob">
+                The type of scheduled job being configured.
+            </typeparam>
+            <returns>
+                The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> so that additional calls can be chained.
+            </returns>
+        </member>
+        <member name="M:Hosting.ScheduledJobs.ServiceCollectionExtensions.AddScheduledJob``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Hosting.ScheduledJobs.ScheduledJobOptions{``0}})">
+            <summary>
+                Adds a scheduled job to the DI container with the provided configuration.
+            </summary>
+            <param name="serviceCollection">
+                The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add the services to.
+            </param>
+            <param name="configureOptions">
+                The action used to configure the job scheduling.
+            </param>
+            <typeparam name="TScheduledJob">
+                The type of scheduled job being configured.
+            </typeparam>
+            <returns>
+                The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> so that additional calls can be chained.
+            </returns>
+        </member>
+    </members>
+</doc>
