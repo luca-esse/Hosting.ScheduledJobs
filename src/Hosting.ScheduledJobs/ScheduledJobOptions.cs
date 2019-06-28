@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using NCrontab;
 
 namespace Hosting.ScheduledJobs
@@ -26,6 +27,7 @@ namespace Hosting.ScheduledJobs
         /// </summary>
         /// <exception cref="ArgumentNullException">The crontab expression is null.</exception>
         /// <exception cref="ArgumentException">The crontab expression is not valid.</exception>
+        [Required]
         public string ExecutionSchedule
         {
             get => _executionSchedule;

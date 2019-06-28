@@ -32,7 +32,10 @@ namespace Hosting.ScheduledJobs
         )
             where TScheduledJob : class, IScheduledJob
         {
-            serviceCollection.Configure<ScheduledJobOptions<TScheduledJob>>(configuration);
+            serviceCollection
+                .AddOptions<ScheduledJobOptions<TScheduledJob>>()
+                .Bind(configuration)
+                .ValidateDataAnnotations();
 
             return AddServices<TScheduledJob>(serviceCollection);
         }
@@ -59,7 +62,10 @@ namespace Hosting.ScheduledJobs
         )
             where TScheduledJob : class, IScheduledJob
         {
-            serviceCollection.Configure(configureOptions);
+            serviceCollection
+                .AddOptions<ScheduledJobOptions<TScheduledJob>>()
+                .Configure(configureOptions)
+                .ValidateDataAnnotations();
 
             return AddServices<TScheduledJob>(serviceCollection);
         }
@@ -67,7 +73,7 @@ namespace Hosting.ScheduledJobs
         private static IServiceCollection AddServices<T>(IServiceCollection serviceCollection) 
             where T : class, IScheduledJob
         {
-            serviceCollection.AddSingleton<IHostedService, JobScheduler<T>>();
+            serviceCollection.AddHostedService<JobScheduler<T>>();
             serviceCollection.AddScoped<T>();
             return serviceCollection;
         }
