@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hosting.ScheduledJobs", "src\Hosting.ScheduledJobs\Hosting.ScheduledJobs.csproj", "{D39BD136-EE3C-410B-8194-90A59DB7AB79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hosting.ScheduledJobs", "src\Hosting.ScheduledJobs\Hosting.ScheduledJobs.csproj", "{D39BD136-EE3C-410B-8194-90A59DB7AB79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hosting.ScheduledJobs.IntegrationTests", "src\Hosting.ScheduledJobs.IntegrationTests\Hosting.ScheduledJobs.IntegrationTests.csproj", "{2BCFCC79-1020-43E6-899A-EE379A3D218B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D39BD136-EE3C-410B-8194-90A59DB7AB79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D39BD136-EE3C-410B-8194-90A59DB7AB79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D39BD136-EE3C-410B-8194-90A59DB7AB79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BCFCC79-1020-43E6-899A-EE379A3D218B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BCFCC79-1020-43E6-899A-EE379A3D218B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BCFCC79-1020-43E6-899A-EE379A3D218B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BCFCC79-1020-43E6-899A-EE379A3D218B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
