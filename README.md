@@ -4,7 +4,7 @@
 public static async Task Main(string[] args)
 {
     var host = new HostBuilder()
-        ConfigureServices((hostContext, services) =>
+        .ConfigureServices((hostContext, services) =>
         {
             services.AddScheduledJob<MyJob>(options =>
             {
