@@ -1,4 +1,4 @@
-# Scheduled jobs for Generic Host/Web Host
+# Scheduled jobs for Generic Host and ASP.NET Core Web Host
 
 ```csharp
 public static async Task Main(string[] args)
