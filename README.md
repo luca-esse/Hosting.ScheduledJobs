@@ -17,7 +17,7 @@ public static async Task Main(string[] args)
     await host.RunAsync();
 }
 
-private class MyJob : IScheduledJob
+public class MyJob : IScheduledJob
 {
     public Task ExecuteAsync()
     {
