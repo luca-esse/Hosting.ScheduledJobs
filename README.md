@@ -1,4 +1,4 @@
-# Generic Host scheduled jobs
+# Scheduled jobs for Generic Host/Web Host
 
 ```csharp
 public static async Task Main(string[] args)
